@@ -5,7 +5,7 @@ namespace DDC.Model.Dice
 {
     public class DieFactory
     {
-        private static readonly Die BlueAttack = new Die(Type.BlueAttack, new[]
+        public static readonly Die BlueAttack = new Die(Type.BlueAttack, new[]
             {
                 FaceFactory.GetAttackFace(3, 2, 0),
                 FaceFactory.GetAttackFace(2, 2, 1),
@@ -15,7 +15,7 @@ namespace DDC.Model.Dice
                 FaceFactory.GetAttackFace(5, 1, 0)
             });
 
-        private static readonly Die YellowAttack = new Die(Type.YellowAttack, new[]
+        public static readonly Die YellowAttack = new Die(Type.YellowAttack, new[]
             {
                 FaceFactory.GetAttackFace(0, 1, 1),
                 FaceFactory.GetAttackFace(0, 2, 1),
@@ -25,7 +25,7 @@ namespace DDC.Model.Dice
                 FaceFactory.GetAttackFace(2, 1, 0)
             });
 
-        private static readonly Die RedAttack = new Die(Type.YellowAttack, new[]
+        public static readonly Die RedAttack = new Die(Type.YellowAttack, new[]
             {
                 FaceFactory.GetAttackFace(0, 3, 0),
                 FaceFactory.GetAttackFace(0, 1, 0),
@@ -35,7 +35,7 @@ namespace DDC.Model.Dice
                 FaceFactory.GetAttackFace(0, 2, 0)
             });
 
-        private static readonly Die BrownDefence = new Die(Type.BrownDefence, new[]
+        public static readonly Die BrownDefence = new Die(Type.BrownDefence, new[]
             {
                 FaceFactory.GetDefenceFace(1),
                 FaceFactory.GetDefenceFace(0),
@@ -45,7 +45,7 @@ namespace DDC.Model.Dice
                 FaceFactory.GetDefenceFace(0)
             });
 
-        private static readonly Die GreyDefence = new Die(Type.GreyDefence, new[]
+        public static readonly Die GreyDefence = new Die(Type.GreyDefence, new[]
             {
                 FaceFactory.GetDefenceFace(1),
                 FaceFactory.GetDefenceFace(0),
@@ -55,7 +55,7 @@ namespace DDC.Model.Dice
                 FaceFactory.GetDefenceFace(1)
             });
 
-        private static readonly Die BlackDefence = new Die(Type.BlackDefence, new[]
+        public static readonly Die BlackDefence = new Die(Type.BlackDefence, new[]
             {
                 FaceFactory.GetDefenceFace(2),
                 FaceFactory.GetDefenceFace(0),

@@ -15,7 +15,7 @@ namespace DDC.Model.Dice
                 {
                     new SymbolCount(Symbol.Range, range),
                     new SymbolCount(Symbol.Heart, heartCount),
-                    new SymbolCount(Symbol.Surge, heartCount)
+                    new SymbolCount(Symbol.Surge, surgeCount)
                 });
         }
 

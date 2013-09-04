@@ -2,7 +2,7 @@
 using DDC.Model.Weapons;
 using NUnit.Framework;
 
-namespace DDC.Core.UnitTests
+namespace DCC.Model.UnitTests
 {
     [TestFixture]
     public class IronLongswordZombieTests

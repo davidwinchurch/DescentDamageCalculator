@@ -15,27 +15,27 @@ namespace DDC.Model.Dice
 
         public double MissProbabiliy
         {
-            get { return CanMiss ? 1d/6 : 0; }
+            get { return CanMiss ? 1 / 6d : 0; }
         }
 
         public double AverageRange
         {
-            get { return 6d/Faces.Sum(f => f.Range); }
+            get { return Faces.Sum(f => f.Range) / 6d; }
         }
 
         public double AverageHearts
         {
-            get { return 6d/Faces.Sum(f => f.Hearts); }
+            get { return Faces.Sum(f => f.Hearts) / 6d; }
         }
 
         public double AverageSurges
         {
-            get { return 6d/Faces.Sum(f => f.Surges); }
+            get { return Faces.Sum(f => f.Surges) / 6d; }
         }
 
         public double AverageShields
         {
-            get { return 6d/Faces.Sum(f => f.Shields); }
+            get { return Faces.Sum(f => f.Shields) / 6d; }
         }
 
         internal Die(Type type, IList<Face> faces)
