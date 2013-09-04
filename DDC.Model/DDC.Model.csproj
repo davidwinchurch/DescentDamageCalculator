@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5BFC86F4-CC1C-4123-A2EA-6C10F21A70EE}</ProjectGuid>
+    <ProjectGuid>{037E7364-9DAB-46FF-9676-29A871B2F215}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DDC.Core</RootNamespace>
-    <AssemblyName>DDC.Core</AssemblyName>
+    <RootNamespace>DDC.Model</RootNamespace>
+    <AssemblyName>DDC.Model</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile158</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -34,36 +34,30 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App.cs" />
+    <Compile Include="Class\Class.cs" />
+    <Compile Include="Class\Type.cs" />
+    <Compile Include="Dice\Die.cs" />
+    <Compile Include="Dice\DieFactory.cs" />
+    <Compile Include="Dice\Face.cs" />
+    <Compile Include="Dice\FaceFactory.cs" />
+    <Compile Include="Dice\ReRollType.cs" />
+    <Compile Include="Dice\Symbol.cs" />
+    <Compile Include="Dice\SymbolCount.cs" />
+    <Compile Include="Dice\Type.cs" />
+    <Compile Include="Heroes\Hero.cs" />
+    <Compile Include="Heroes\Type.cs" />
+    <Compile Include="Monsters\MasterMonster.cs" />
+    <Compile Include="Monsters\Monster.cs" />
+    <Compile Include="Monsters\MonsterFactory.cs" />
+    <Compile Include="Monsters\Type.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\DamageCalculationService.cs" />
-    <Compile Include="ViewModels\FirstViewModel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Cirrious.CrossCore">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.11-beta1\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.CrossCore.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.0.11-beta1\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.dll</HintPath>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Localization">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.11-beta1\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Localization.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ToDo-MvvmCross\_ Core.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DDC.Model\DDC.Model.csproj">
-      <Project>{037e7364-9dab-46ff-9676-29a871b2f215}</Project>
-      <Name>DDC.Model</Name>
-    </ProjectReference>
+    <Compile Include="Weapons\MeleeWeapon.cs" />
+    <Compile Include="Weapons\RangedWeapon.cs" />
+    <Compile Include="Weapons\Type.cs" />
+    <Compile Include="Weapons\Weapon.cs" />
+    <Compile Include="Weapons\WeaponFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
