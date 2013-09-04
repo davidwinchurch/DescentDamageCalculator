@@ -3,9 +3,19 @@ using DDC.Core.Model.Dice;
 
 namespace DDC.Core.Model.Weapons
 {
-    public class Weapon
+    public abstract class Weapon
     {
+        public string Name { get; private set; }
         public Type Type { get; private set; }
         public IList<Die> Dice { get; private set; }
+
+        public abstract double GetHitChance(int range = 0);
+
+        protected Weapon(string name, Type type, IList<Die> dice)
+        {
+            Name = name;
+            Type = type;
+            Dice = dice;
+        }
     }
 }

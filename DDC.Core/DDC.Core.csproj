@@ -48,6 +48,8 @@
     <Compile Include="Model\Heroes\Type.cs" />
     <Compile Include="Model\Monsters\Monster.cs" />
     <Compile Include="Model\Monsters\Type.cs" />
+    <Compile Include="Model\Weapons\MeleeWeapon.cs" />
+    <Compile Include="Model\Weapons\RangedWeapon.cs" />
     <Compile Include="Model\Weapons\Type.cs" />
     <Compile Include="Model\Weapons\Weapon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
