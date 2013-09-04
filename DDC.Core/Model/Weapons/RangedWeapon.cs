@@ -10,7 +10,7 @@ namespace DDC.Core.Model.Weapons
 
         }
 
-        public override double GetHitChance(int range = 0)
+        public override double GetHitChance(int range = 0, ReRollType reRollType = ReRollType.None)
         {
             throw new System.NotImplementedException();
         }

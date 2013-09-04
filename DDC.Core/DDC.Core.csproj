@@ -42,10 +42,12 @@
     <Compile Include="Model\Class\Type.cs" />
     <Compile Include="Model\Dice\Die.cs" />
     <Compile Include="Model\Dice\Face.cs" />
+    <Compile Include="Model\Dice\ReRollType.cs" />
     <Compile Include="Model\Dice\Symbol.cs" />
     <Compile Include="Model\Dice\Type.cs" />
     <Compile Include="Model\Heroes\Hero.cs" />
     <Compile Include="Model\Heroes\Type.cs" />
+    <Compile Include="Model\Monsters\MasterMonster.cs" />
     <Compile Include="Model\Monsters\Monster.cs" />
     <Compile Include="Model\Monsters\Type.cs" />
     <Compile Include="Model\Weapons\MeleeWeapon.cs" />

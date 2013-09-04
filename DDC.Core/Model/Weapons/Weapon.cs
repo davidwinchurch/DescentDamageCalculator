@@ -9,7 +9,7 @@ namespace DDC.Core.Model.Weapons
         public Type Type { get; private set; }
         public IList<Die> Dice { get; private set; }
 
-        public abstract double GetHitChance(int range = 0);
+        public abstract double GetHitChance(int range = 0, ReRollType reRollType = ReRollType.None);
 
         protected Weapon(string name, Type type, IList<Die> dice)
         {
