@@ -1,4 +1,4 @@
-﻿namespace DDC.Core.Model
+﻿namespace DDC.Core.Model.Class
 {
     public class Class
     {
