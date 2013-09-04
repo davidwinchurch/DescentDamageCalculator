@@ -3,114 +3,105 @@ using System.Linq;
 
 namespace DDC.Core.Model.Die
 {
-    public enum Symbol
-    {
-        Miss,
-        Heart,
-        Surge,
-        Range,
-        Shield
-    }
-
-    public enum Type
-    {
-        BlueAttack,
-        YellowAttack,
-        RedAttack,
-        GreenAttack,
-        BrownDefence,
-        GreyDefence,
-        BlackDefence,
-    }
-
     public class Die
     {
-        public static readonly Die BlueAttackDie = new Die(Type.BlueAttack, new[]
+        public static readonly Die BlueAttack = new Die(Type.BlueAttack, new[]
             {
+                Face.GetAttackFace(3, 2, 0),
+                Face.GetAttackFace(2, 2, 1),
+                Face.GetAttackFace(4, 2, 0),
+                Face.GetAttackFace(6, 1, 1),
                 Face.GetMissFace(),
+                Face.GetAttackFace(5, 1, 0)
+            });
 
+        public static readonly Die YellowAttack = new Die(Type.YellowAttack, new[]
+            {
+                Face.GetAttackFace(0, 1, 1),
+                Face.GetAttackFace(0, 2, 1),
+                Face.GetAttackFace(0, 2, 0),
+                Face.GetAttackFace(1, 1, 0),
+                Face.GetAttackFace(1, 0, 1),
+                Face.GetAttackFace(2, 1, 0)
+            });
+
+        public static readonly Die RedAttack = new Die(Type.YellowAttack, new[]
+            {
+                Face.GetAttackFace(0, 3, 0),
+                Face.GetAttackFace(0, 1, 0),
+                Face.GetAttackFace(0, 2, 0),
+                Face.GetAttackFace(0, 2, 0),
+                Face.GetAttackFace(0, 3, 1),
+                Face.GetAttackFace(0, 2, 0)
+            });
+
+        public static readonly Die BrownDefence = new Die(Type.BrownDefence, new[]
+            {
+                Face.GetDefenceFace(1),
+                Face.GetDefenceFace(0),
+                Face.GetDefenceFace(2),
+                Face.GetDefenceFace(1),
+                Face.GetDefenceFace(0),
+                Face.GetDefenceFace(0)
+            });
+
+        public static readonly Die GreyDefence = new Die(Type.GreyDefence, new[]
+            {
+                Face.GetDefenceFace(1),
+                Face.GetDefenceFace(0),
+                Face.GetDefenceFace(3),
+                Face.GetDefenceFace(1),
+                Face.GetDefenceFace(2),
+                Face.GetDefenceFace(1)
+            });
+
+        public static readonly Die BlackDefence = new Die(Type.BlackDefence, new[]
+            {
+                Face.GetDefenceFace(2),
+                Face.GetDefenceFace(0),
+                Face.GetDefenceFace(3),
+                Face.GetDefenceFace(2),
+                Face.GetDefenceFace(4),
+                Face.GetDefenceFace(2)
             });
 
         public Type Type { get; private set; }
         public IList<Face> Faces { get; private set; }
 
+        public bool CanMiss
+        {
+            get { return Faces.Any(f => f.IsMiss); }
+        }
+
+        public double MissProbabiliy
+        {
+            get { return CanMiss ? 1d/6 : 0; }
+        }
+
+        public double AverageRange
+        {
+            get { return 6d/Faces.Sum(f => f.Range); }
+        }
+
+        public double AverageHearts
+        {
+            get { return 6d/Faces.Sum(f => f.Hearts); }
+        }
+
+        public double AverageSurges
+        {
+            get { return 6d/Faces.Sum(f => f.Surges); }
+        }
+
+        public double AverageShields
+        {
+            get { return 6d/Faces.Sum(f => f.Shields); }
+        }
+
         private Die(Type type, IList<Face> faces)
         {
             Type = type;
             Faces = faces;
-        }
-    }
-
-    public class Face
-    {
-        public bool IsMiss
-        {
-            get { return SymbolQuantities.Any(sq => sq.Symbol == Symbol.Miss); }
-        }
-
-        public int Hearts
-        {
-            get { return GetSymbolCount(Symbol.Heart); }
-        }
-
-        public int Surges
-        {
-            get { return GetSymbolCount(Symbol.Surge); }
-        }
-
-        public int Range
-        {
-            get { return GetSymbolCount(Symbol.Range); }
-        }
-
-        public int Shields
-        {
-            get { return GetSymbolCount(Symbol.Shield); }
-        }
-
-        public static Face GetMissFace()
-        {
-            return new Face(new List<SymbolCount> { new SymbolCount(Symbol.Miss, 1) });
-        }
-
-        public static Face GetAttackFace(int heartCount, int surgeCount, int range)
-        {
-            return new Face(new List<SymbolCount>
-                {
-                    new SymbolCount(Symbol.Heart, heartCount),
-                    new SymbolCount(Symbol.Surge, heartCount),
-                    new SymbolCount(Symbol.Range, range)
-                });
-        }
-
-        public static Face GetDefenseFace(int count)
-        {
-            return new Face(new List<SymbolCount> { new SymbolCount(Symbol.Shield, count) });
-        }
-        
-        private Face(IList<SymbolCount> symbolQuantities)
-        {
-            SymbolQuantities = symbolQuantities;
-        }
-
-        private IList<SymbolCount> SymbolQuantities { get; set; }
-
-        private int GetSymbolCount(Symbol symbol)
-        {
-            var symbolCount = SymbolQuantities.FirstOrDefault(sq => sq.Symbol == symbol);
-            return symbolCount == null ? 0 : symbolCount.Count;
-        }
-
-        private class SymbolCount
-        {
-            public SymbolCount(Symbol symbol, int count)
-            {
-                Symbol = symbol;
-                Count = count;
-            }
-
-            public Symbol Symbol { get; private set; }
-            public int Count { get; private set; }
         }
     }
 }

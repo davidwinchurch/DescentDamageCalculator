@@ -40,6 +40,9 @@
     <Compile Include="App.cs" />
     <Compile Include="Model\Class.cs" />
     <Compile Include="Model\Die\Die.cs" />
+    <Compile Include="Model\Die\Face.cs" />
+    <Compile Include="Model\Die\Symbol.cs" />
+    <Compile Include="Model\Die\Type.cs" />
     <Compile Include="Model\Hero.cs" />
     <Compile Include="Model\Monster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
