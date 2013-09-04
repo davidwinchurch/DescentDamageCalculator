@@ -1,4 +1,4 @@
-﻿namespace DDC.Core.Model.Monster
+﻿namespace DDC.Core.Model.Monsters
 {
     public enum Type
     {

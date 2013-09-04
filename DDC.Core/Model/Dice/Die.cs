@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace DDC.Core.Model.Die
+namespace DDC.Core.Model.Dice
 {
     public class Die
     {

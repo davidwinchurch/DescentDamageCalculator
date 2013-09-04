@@ -1,4 +1,4 @@
-﻿namespace DDC.Core.Model.Hero
+﻿namespace DDC.Core.Model.Heroes
 {
     public class Hero
     {

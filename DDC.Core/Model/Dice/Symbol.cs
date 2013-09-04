@@ -1,4 +1,4 @@
-﻿namespace DDC.Core.Model.Die
+﻿namespace DDC.Core.Model.Dice
 {
     public enum Symbol
     {
