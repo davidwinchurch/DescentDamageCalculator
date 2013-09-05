@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dice\DieTests.cs" />
+    <Compile Include="Dice\DefenceDieTests.cs" />
+    <Compile Include="Dice\DiceTests.cs" />
+    <Compile Include="Dice\AttackDieTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IronLongswordZombieTests.cs" />
   </ItemGroup>

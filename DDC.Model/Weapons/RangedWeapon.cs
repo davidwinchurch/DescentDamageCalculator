@@ -5,7 +5,7 @@ namespace DDC.Model.Weapons
 {
     public class RangedWeapon : Weapon
     {
-        public RangedWeapon(string name, IList<Die> dice, bool isSecondAct = false) : base(name, Type.Ranged, isSecondAct, dice)
+        public RangedWeapon(string name, DiceCalculator dice, bool isSecondAct = false) : base(name, Type.Ranged, isSecondAct, dice)
         {
 
         }

@@ -4,6 +4,6 @@ namespace DDC.Model.Weapons
 {
     public class WeaponFactory
     {
-        public static readonly Weapon IronLongsword = new MeleeWeapon("Iron Longsword", DieFactory.CreateDice(Dice.Type.BlueAttack, Dice.Type.RedAttack));
+        public static readonly Weapon IronLongsword = new MeleeWeapon("Iron Longsword", DieFactory.AttackBlueRed);
     }
 }

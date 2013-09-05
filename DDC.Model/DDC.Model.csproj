@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="Class\Class.cs" />
     <Compile Include="Class\Type.cs" />
+    <Compile Include="Dice\DiceCalculator.cs" />
     <Compile Include="Dice\Die.cs" />
     <Compile Include="Dice\DieFactory.cs" />
     <Compile Include="Dice\Face.cs" />

@@ -8,11 +8,11 @@ namespace DDC.Model.Weapons
         public string Name { get; private set; }
         public Type Type { get; private set; }
         public bool IsSecondAct { get; private set; }
-        public IList<Die> Dice { get; private set; }
+        public DiceCalculator Dice { get; private set; }
 
         public abstract double GetHitChance(int range = 0, ReRollType reRollType = ReRollType.None);
 
-        protected Weapon(string name, Type type, bool isSecondAct, IList<Die> dice)
+        protected Weapon(string name, Type type, bool isSecondAct, DiceCalculator dice)
         {
             Name = name;
             Type = type;

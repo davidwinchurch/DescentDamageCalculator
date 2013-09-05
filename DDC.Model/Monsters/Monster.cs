@@ -8,15 +8,15 @@ namespace DDC.Model.Monsters
         public Type Type { get; private set; }
         public bool IsMaster { get; private set; }
         public bool IsSecondAct { get; private set; }
-        public IList<Die> AttackDice { get; private set; }
-        public IList<Die> DefenceDice { get; private set; }
+        public DiceCalculator AttackDice { get; private set; }
+        public DiceCalculator DefenceDice { get; private set; }
 
-        public Monster(Type type, IList<Die> attackDice, IList<Die> defenceDice, bool isSecondAct = false) : this(type, false, isSecondAct, attackDice, defenceDice)
+        public Monster(Type type, DiceCalculator attackDice, DiceCalculator defenceDice, bool isSecondAct = false) : this(type, false, isSecondAct, attackDice, defenceDice)
         {
             
         }
             
-        protected Monster(Type type, bool isMaster, bool isSecondAct, IList<Die> attackDice, IList<Die> defenceDice)
+        protected Monster(Type type, bool isMaster, bool isSecondAct, DiceCalculator attackDice, DiceCalculator defenceDice)
         {
             Type = type;
             IsMaster = isMaster;

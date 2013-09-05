@@ -65,7 +65,14 @@ namespace DDC.Model.Dice
                 FaceFactory.GetDefenceFace(2)
             });
 
-        private static readonly Dictionary<Type, Die> Dice = new Dictionary<Type, Die>
+        public static readonly DiceCalculator AttackBlueYellow = new DiceCalculator(BlueAttack, YellowAttack);
+        public static readonly DiceCalculator AttackBlueRed = new DiceCalculator(BlueAttack, RedAttack);
+
+        public static readonly DiceCalculator DefenceBrown = new DiceCalculator(BrownDefence);
+        public static readonly DiceCalculator DefenceGrey = new DiceCalculator(GreyDefence);
+        public static readonly DiceCalculator DefenceBlack = new DiceCalculator(BlackDefence);
+
+        /*private static readonly Dictionary<Type, Die> Dice = new Dictionary<Type, Die>
             {
                 { Type.BlueAttack, BlueAttack },
                 { Type.YellowAttack, YellowAttack },
@@ -75,9 +82,10 @@ namespace DDC.Model.Dice
                 { Type.BlackDefence, BlackDefence },
             }; 
 
-        public static IList<Die> CreateDice(params Type[] dieTypes)
+        public static DiceCalculator CreateDiceCalculator(params Type[] dieTypes)
         {
-            return dieTypes.Select(dt => Dice[dt]).ToArray();
-        }
+            var dice = dieTypes.Select(dt => Dice[dt]).ToArray();
+            return new DiceCalculator(dice);
+        }*/
     }
 }
