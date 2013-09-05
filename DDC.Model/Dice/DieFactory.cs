@@ -25,7 +25,7 @@ namespace DDC.Model.Dice
                 FaceFactory.GetAttackFace(2, 1, 0)
             });
 
-        public static readonly Die RedAttack = new Die(Type.YellowAttack, new[]
+        public static readonly Die RedAttack = new Die(Type.RedAttack, new[]
             {
                 FaceFactory.GetAttackFace(0, 3, 0),
                 FaceFactory.GetAttackFace(0, 1, 0),
